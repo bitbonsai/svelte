@@ -16,7 +16,13 @@ function increment() {
 }
 ```
 
-Clicking the `+` button should now update the count. Do the inverse for `Decrementer.svelte`.
+Clicking the `+` button should now update the count. Do the inverse for `Decrementer.svelte`, adding a check to avoid it going negative.
+
+```js
+function decrement() {
+	count.update(n => (n > 0) n - 1 : 0);
+}
+```
 
 Finally, in `Resetter.svelte`, implement `reset`:
 
