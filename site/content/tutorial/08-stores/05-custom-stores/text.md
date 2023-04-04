@@ -13,7 +13,7 @@ function createCount() {
 	return {
 		subscribe,
 		increment: () => update(n => n + 1),
-		decrement: () => update(n => n - 1),
+		decrement: () => update(n => (n > 0) ? n - 1 : 0),
 		reset: () => set(0)
 	};
 }
